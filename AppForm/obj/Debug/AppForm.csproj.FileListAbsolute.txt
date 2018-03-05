@@ -1,0 +1,10 @@
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\bin\Debug\AppForm.exe.config
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\bin\Debug\AppForm.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\bin\Debug\AppForm.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.csprojResolveAssemblyReference.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.Form1.resources
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.Properties.Resources.resources
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.csproj.GenerateResource.Cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppForm\obj\Debug\AppForm.pdb
