@@ -22,6 +22,7 @@ namespace AppForm
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
+            listBox3.Items.Clear();
 
             foreach (string name in client.GetStationsFromCity(listBox1.SelectedItem.ToString()))
             {
@@ -39,6 +40,11 @@ namespace AppForm
 
             Int32.TryParse(listBox2.SelectedItem.ToString().Split('-')[0].Split('_')[0].Trim(), out int n);
             listBox3.Items.Add(client.GetStationOfCity(n, listBox1.SelectedItem.ToString()).Split('-').Last().Trim());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sélectionnez une ville dans la première colonne, puis une station dans la seconde.");
         }
     }
 }
