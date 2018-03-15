@@ -1,5 +1,8 @@
 ﻿namespace Solution5
 {
+    /// <summary>
+    /// Represents a station thanks to the data given by JCDecaux.
+    /// </summary>
     public class Station
     {
         public int Number { get; set; }

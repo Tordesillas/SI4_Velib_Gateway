@@ -7,6 +7,12 @@ namespace AppForm
     public partial class Form1 : Form
     {
         private Service1Client client;
+
+        /// <summary>
+        /// Constructs a Form1 object.
+        /// Initializes the client.
+        /// Updates the cities available.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +25,9 @@ namespace AppForm
             }
         }
 
+        /// <summary>
+        /// When a city is selected, displays the station list.
+        /// </summary>
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             listBox2.Items.Clear();
@@ -30,6 +39,9 @@ namespace AppForm
             }
         }
 
+        /// <summary>
+        /// When a station is selected, displays the station data.
+        /// </summary>
         private void listBox2_SelectedValueChanged(object sender, EventArgs e)
         {
             listBox3.Items.Clear();
@@ -42,6 +54,9 @@ namespace AppForm
             listBox3.Items.Add(client.GetStationOfCity(n, listBox1.SelectedItem.ToString()).Split('-').Last().Trim());
         }
 
+        /// <summary>
+        /// Displays a pop-up with some help.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Sélectionnez une ville dans la première colonne, puis une station dans la seconde.");

@@ -4,6 +4,13 @@ namespace AppConsole
 {
     class Program
     {
+        /// <summary>
+        /// Launches the console application.
+        /// Initializes the client.
+        /// Parses the user's request.
+        /// Relizes a request linked with the first keyword given by the user.
+        /// Displays the answer.
+        /// </summary>
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenue dans Célib, l'outil efficace pour trouver des vélos célibataires dans votre ville !");
