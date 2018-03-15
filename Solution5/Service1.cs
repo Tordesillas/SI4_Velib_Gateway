@@ -24,11 +24,11 @@ namespace Solution5
         /// Gives the available city names of JCDecaux.
         /// Uses the cache if the request has been already done.
         /// </summary>
-        public string[] GetCitiesName()
+        public async Task<string[]> GetCitiesName()
         {
             if (citiesCache == null)
             {
-                WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/contracts?&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
+                WebRequest request = await Task.Run(() => request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/contracts?&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156"));
                 WebResponse response = request.GetResponse();
 
                 Stream dataStream = response.GetResponseStream();
@@ -55,7 +55,7 @@ namespace Solution5
         /// Gives the station names of a city thanks to its name given in parameter.
         /// Uses the cache if the request has been already done.
         /// </summary>
-        public string[] GetStationsFromCity(string city)
+        public async Task<string[]> GetStationsFromCity(string city)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Solution5
                 }
                 else
                 {
-                    WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
+                    WebRequest request = await Task.Run(() => WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156"));
                     WebResponse response = request.GetResponse();
 
                     Stream dataStream = response.GetResponseStream();
@@ -105,12 +105,12 @@ namespace Solution5
         /// </summary>
         /// <param name="station">The station id</param>
         /// <param name="city">The city name which contains the station</param>
-        public string GetStationOfCity(int station, string city)
+        public async Task<string> GetStationOfCity(int station, string city)
         {
             try
             {
                 Station stationFound;
-                WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations/" + station + "?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
+                WebRequest request = await Task.Run(() => WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations/" + station + "?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156"));
                 WebResponse response = request.GetResponse();
 
                 Stream dataStream = response.GetResponseStream();

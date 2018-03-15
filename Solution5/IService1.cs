@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Solution5
 {
@@ -11,12 +12,12 @@ namespace Solution5
     public interface IService1
     {
         [OperationContract]
-        string[] GetCitiesName();
+        Task<string[]> GetCitiesName();
 
         [OperationContract]
-        string[] GetStationsFromCity(string city);
+        Task<string[]> GetStationsFromCity(string city);
 
         [OperationContract]
-        string GetStationOfCity(int station, string city);
+        Task<string> GetStationOfCity(int station, string city);
     }
 }
