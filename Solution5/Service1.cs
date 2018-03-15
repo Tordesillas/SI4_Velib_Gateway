@@ -2,33 +2,46 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace Solution5
 {
     public class Service1 : IService1
     {
-        private Dictionary<string, Station[]> cityCache = new Dictionary<string, Station[]>();
-        private Dictionary<string, Station> stationCache = new Dictionary<string, Station>();
+        private string[] citiesCache;
+        private Dictionary<string, Station[]> stationsCache;
+
+        public Service1()
+        {
+            stationsCache = new Dictionary<string, Station[]>();
+            DelayCache();
+        }
+
         public string[] GetCitiesName()
         {
-            WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/contracts?&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
-            WebResponse response = request.GetResponse();
-
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-
-            Station[] answers = JsonConvert.DeserializeObject<Station[]>(responseFromServer);
-
-            List<string> names = new List<string>();
-            foreach (Station ro in answers)
+            if (citiesCache == null)
             {
-                names.Add(ro.Name);
-            }
-            reader.Close();
-            response.Close();
+                WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/contracts?&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
+                WebResponse response = request.GetResponse();
 
-            return names.ToArray();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
+
+                Station[] answers = JsonConvert.DeserializeObject<Station[]>(responseFromServer);
+
+                List<string> names = new List<string>();
+                foreach (Station ro in answers)
+                {
+                    names.Add(ro.Name);
+                }
+                reader.Close();
+                response.Close();
+
+                citiesCache = names.ToArray();
+            }
+
+            return citiesCache;
         }
 
         public string[] GetStationsFromCity(string city)
@@ -36,9 +49,9 @@ namespace Solution5
             try
             {
                 Station[] stations;
-                if (cityCache.ContainsKey(city.ToLower()))
+                if (stationsCache.ContainsKey(city.ToLower()))
                 {
-                    cityCache.TryGetValue(city, out stations);
+                    stationsCache.TryGetValue(city, out stations);
                 }
                 else
                 {
@@ -51,7 +64,7 @@ namespace Solution5
 
                     stations = JsonConvert.DeserializeObject<Station[]>(responseFromServer);
 
-                    cityCache.Add(city.ToLower(), stations);
+                    stationsCache.Add(city.ToLower(), stations);
                     reader.Close();
                     response.Close();
                 }
@@ -80,27 +93,32 @@ namespace Solution5
             try
             {
                 Station stationFound;
-                if (stationCache.ContainsKey(city.ToLower() + station))
-                {
-                    stationCache.TryGetValue(city, out stationFound);
-                }
-                else
-                {
-                    WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations/" + station + "?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
-                    WebResponse response = request.GetResponse();
+                WebRequest request = WebRequest.Create("https://api.jcdecaux.com/vls/v1/stations/" + station + "?contract=" + city + "&apiKey=a8d04614d18cc2033006de4ac10446eb0af81156");
+                WebResponse response = request.GetResponse();
 
-                    Stream dataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(dataStream);
-                    string responseFromServer = reader.ReadToEnd();
+                Stream dataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(dataStream);
+                string responseFromServer = reader.ReadToEnd();
 
-                    stationFound = JsonConvert.DeserializeObject<Station>(responseFromServer);
-                    stationCache.Add(city.ToLower() + stationFound.Number, stationFound);
-                }
+                stationFound = JsonConvert.DeserializeObject<Station>(responseFromServer);
                 return stationFound.ToStrings();
-            } catch
+            }
+            catch
             {
                 return "Aucun résultat n'a été trouvé.";
             }
+        }
+
+        public void DelayCache()
+        {
+            Task.Delay(604800000).ContinueWith(t => EmptyCache());     //update every week
+        }
+
+        public void EmptyCache()
+        {
+            stationsCache = new Dictionary<string, Station[]>();
+            citiesCache = null;
+            DelayCache();
         }
     }
 }

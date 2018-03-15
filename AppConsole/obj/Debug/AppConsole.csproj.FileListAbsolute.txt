@@ -5,3 +5,10 @@ C:\Users\bubbl\Documents\SI4\WebServices\TP2\Solution5\AppConsole\obj\Debug\AppC
 C:\Users\bubbl\Documents\SI4\WebServices\TP2\Solution5\AppConsole\obj\Debug\AppConsole.csproj.CoreCompileInputs.cache
 C:\Users\bubbl\Documents\SI4\WebServices\TP2\Solution5\AppConsole\obj\Debug\AppConsole.exe
 C:\Users\bubbl\Documents\SI4\WebServices\TP2\Solution5\AppConsole\obj\Debug\AppConsole.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\bin\Debug\AppConsole.exe.config
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\bin\Debug\AppConsole.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\bin\Debug\AppConsole.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\obj\Debug\AppConsole.csprojResolveAssemblyReference.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\obj\Debug\AppConsole.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\obj\Debug\AppConsole.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppConsole\obj\Debug\AppConsole.pdb
