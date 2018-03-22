@@ -10,12 +10,14 @@ namespace Solution5
     {
         private string[] citiesCache;
         private Dictionary<string, Station[]> stationsCache;
+        private long delay;
 
         /// <summary>
         /// Constructs a Service1 and launches the timer to empty the cache.
         /// </summary>
         public Service1()
         {
+            delay = 604800000;
             stationsCache = new Dictionary<string, Station[]>();
             DelayCache();
         }
@@ -129,19 +131,36 @@ namespace Solution5
         /// <summary>
         /// Launches a timer which will erase the cache in one week.
         /// </summary>
-        public void DelayCache()
+        private void DelayCache()
         {
-            Task.Delay(604800000).ContinueWith(t => EmptyCache());
+            Task.Delay(new System.TimeSpan(delay)).ContinueWith(t => EmptyCache());
         }
 
         /// <summary>
         /// Erases the cache and reloads the timer.
         /// </summary>
-        public void EmptyCache()
+        void EmptyCache()
         {
             stationsCache = new Dictionary<string, Station[]>();
             citiesCache = null;
             DelayCache();
+        }
+
+        /// <summary>
+        /// Erases cache.
+        /// </summary>
+        void IService1.EmptyCache()
+        {
+            EmptyCache();
+        }
+
+        /// <summary>
+        /// Change the delay of the cache removing.
+        /// </summary>
+        public void SetCacheDelay(long newDelay)
+        {
+            delay = newDelay;
+            EmptyCache();
         }
     }
 }

@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConsole", "AppConsole\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppForm", "AppForm\AppForm.csproj", "{170A43D0-4F3D-4E5B-87CF-CE89BE4B593C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppAdmin", "AppAdmin\AppAdmin.csproj", "{83A36927-132F-4F28-9B31-56A6B3C18CFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D23B10E2-D6E9-4869-AC18-5B1C11F2FCE7} = {D23B10E2-D6E9-4869-AC18-5B1C11F2FCE7}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +32,10 @@ Global
 		{170A43D0-4F3D-4E5B-87CF-CE89BE4B593C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{170A43D0-4F3D-4E5B-87CF-CE89BE4B593C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{170A43D0-4F3D-4E5B-87CF-CE89BE4B593C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A36927-132F-4F28-9B31-56A6B3C18CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A36927-132F-4F28-9B31-56A6B3C18CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A36927-132F-4F28-9B31-56A6B3C18CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A36927-132F-4F28-9B31-56A6B3C18CFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

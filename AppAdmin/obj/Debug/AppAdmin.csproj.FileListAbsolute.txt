@@ -1,0 +1,7 @@
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\bin\Debug\AppAdmin.exe.config
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\bin\Debug\AppAdmin.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\bin\Debug\AppAdmin.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\obj\Debug\AppAdmin.csprojResolveAssemblyReference.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\obj\Debug\AppAdmin.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\obj\Debug\AppAdmin.exe
+C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\AppAdmin\obj\Debug\AppAdmin.pdb

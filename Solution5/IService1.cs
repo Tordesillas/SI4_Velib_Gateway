@@ -19,5 +19,11 @@ namespace Solution5
 
         [OperationContract]
         Task<string> GetStationOfCity(int station, string city);
+
+        [OperationContract]
+        void EmptyCache();
+
+        [OperationContract]
+        void SetCacheDelay(long delay);
     }
 }

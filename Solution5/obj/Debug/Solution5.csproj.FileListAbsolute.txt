@@ -12,7 +12,6 @@ C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\bin\Debug\S
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\bin\Debug\Solution5.pdb
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\bin\Debug\Newtonsoft.Json.dll
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\bin\Debug\Newtonsoft.Json.xml
-C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\obj\Debug\Solution5.csprojResolveAssemblyReference.cache
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\obj\Debug\Solution5.csproj.CoreCompileInputs.cache
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\obj\Debug\Solution5.dll
 C:\Users\bubbl\Documents\SI4\WebServices\SI4_Velib_Gateway\Solution5\obj\Debug\Solution5.pdb
