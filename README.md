@@ -5,6 +5,7 @@
 - AppForm : Interface graphique pour l'utilisateur du système.
 - AppAdmin : Console pour l'administrateur du système.
 - Solution5 : Web Service intermédiaire.
+- Solution6 : Projet répondant à la session 4 (Event based communication and architecture with web services)
 
 ## Travail réalisé
 
@@ -12,7 +13,7 @@
 Le Web Service propose une API WS-SOAP.
 Une application console permet au client de connaître le nombre de vélos disponibles à travers l'API.
 Le client peut obtenir de l'aide à partir de la commande /help.
-    
+
 ### Extensions
 -   Interface graphique pour le client.
 -   Accès asynchrones dans l'interface graphique.

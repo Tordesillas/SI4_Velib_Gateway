@@ -1,0 +1,7 @@
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\obj\Debug\ConsoleClient.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleClient\obj\Debug\ConsoleClient.pdb

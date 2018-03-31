@@ -1,0 +1,5 @@
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\EventsLib\bin\Debug\EventsLib.dll
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\EventsLib\bin\Debug\EventsLib.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\EventsLib\obj\Debug\EventsLib.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\EventsLib\obj\Debug\EventsLib.dll
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\EventsLib\obj\Debug\EventsLib.pdb

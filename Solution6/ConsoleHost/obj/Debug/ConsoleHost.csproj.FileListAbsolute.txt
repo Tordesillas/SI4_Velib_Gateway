@@ -1,0 +1,9 @@
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\bin\Debug\ConsoleHost.exe.config
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\bin\Debug\ConsoleHost.exe
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\bin\Debug\ConsoleHost.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\bin\Debug\EventsLib.dll
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\bin\Debug\EventsLib.pdb
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\obj\Debug\ConsoleHost.csprojResolveAssemblyReference.cache
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\obj\Debug\ConsoleHost.csproj.CoreCompileInputs.cache
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\obj\Debug\ConsoleHost.exe
+C:\Users\bubbl\Documents\SI4\WebServices\TP3\Solution6\ConsoleHost\obj\Debug\ConsoleHost.pdb
