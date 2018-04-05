@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel;
 
 namespace AppConsole
 {
@@ -15,7 +16,11 @@ namespace AppConsole
         {
             Console.WriteLine("Bienvenue dans Célib, l'outil efficace pour trouver des vélos célibataires dans votre ville !");
             Console.WriteLine("Tapez une commande ou /help pour connaître les commande disponibles.");
-            Service1Client client = new Service1Client();
+
+            ServiceCallbackSink objsink = new ServiceCallbackSink();
+            InstanceContext iCntxt = new InstanceContext(objsink);
+
+            ServiceReference.Service1Client client = new ServiceReference.Service1Client(iCntxt);
 
             while (true)
             {
@@ -27,6 +32,7 @@ namespace AppConsole
                         Console.WriteLine("AIDE : /cities - liste toutes les villes.\n" +
                                           "       /stations <ville> - liste les stations d'une ville.\n" +
                                           "       /station <ville> <n° de station> - donne les informations d'une station.\n" +
+                                          "       /sub <ville> <n° de station> - souscrit à une station" +
                                           "       /exit - termine le programme.\n");
                         break;
 
@@ -53,6 +59,19 @@ namespace AppConsole
                         {
                             Int32.TryParse(userResponse[2], out int n);
                             Console.WriteLine(client.GetStationOfCity(n, userResponse[1]));
+                        }
+                        break;
+
+                    case "/sub":
+                        if (userResponse.Length != 3)
+                        {
+                            Console.WriteLine("Les paramètres sont incorrects.");
+                        }
+                        else
+                        {
+                            Int32.TryParse(userResponse[2], out int n);
+                            client.SuscribeStationEvent(n, userResponse[1]);
+                            Console.WriteLine("Souscription réalisée.");
                         }
                         break;
 

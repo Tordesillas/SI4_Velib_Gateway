@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace Solution5
@@ -19,6 +21,8 @@ namespace Solution5
         {
             delay = 604800000;
             stationsCache = new Dictionary<string, Station[]>();
+            actions = new Dictionary<Tuple<string, int>, Action<string, int>>();
+            bikes = new Dictionary<Tuple<string, int>, int>();
             DelayCache();
         }
 
@@ -120,6 +124,14 @@ namespace Solution5
                 string responseFromServer = reader.ReadToEnd();
 
                 stationFound = JsonConvert.DeserializeObject<Station>(responseFromServer);
+
+                Tuple<string, int> tuple = new Tuple<string, int>(city, station);
+                if (actions.ContainsKey(tuple) && !bikes[tuple].Equals(stationFound.Available_bikes))
+                {
+                    actions[tuple](stationFound.Name, stationFound.Available_bikes);
+                    bikes[tuple] = stationFound.Available_bikes;
+                }
+
                 return stationFound.ToStrings();
             }
             catch
@@ -133,7 +145,8 @@ namespace Solution5
         /// </summary>
         private void DelayCache()
         {
-            Task.Delay(new System.TimeSpan(delay)).ContinueWith(t => EmptyCache());
+            Task.Delay(new TimeSpan(delay)).ContinueWith(t => EmptyCache());
+            Task.Delay(new TimeSpan(delay / 100)).ContinueWith(t => CallSubscriberAsync());
         }
 
         /// <summary>
@@ -161,6 +174,33 @@ namespace Solution5
         {
             delay = newDelay;
             EmptyCache();
+        }
+
+        private Dictionary<Tuple<string, int>, Action<string, int>> actions;
+        private Dictionary<Tuple<string, int>, int> bikes;
+
+        public void SuscribeStationEvent(int station, string city)
+        {
+            IServiceEvents subscriber = OperationContext.Current.GetCallbackChannel<IServiceEvents>();
+            Tuple<string, int> tuple = new Tuple<string, int>(city, station);
+            if (actions.ContainsKey(tuple))
+            {
+                actions[tuple] += subscriber.GetStation;
+            } else
+            {
+                Action<string, int> newEvent = delegate { };
+                newEvent += subscriber.GetStation;
+                actions.Add(tuple, newEvent);
+                bikes.Add(tuple, -1);
+            }
+        }
+
+        private async Task CallSubscriberAsync()
+        {
+            foreach (Tuple<string, int> tuple in actions.Keys)
+            {
+                await GetStationOfCity(tuple.Item2, tuple.Item1);
+            }
         }
     }
 }

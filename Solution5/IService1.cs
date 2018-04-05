@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Solution5
 {
-    [ServiceContract]
+    [ServiceContract(CallbackContract = typeof(IServiceEvents))]
     public interface IService1
     {
         [OperationContract]
@@ -25,5 +25,8 @@ namespace Solution5
 
         [OperationContract]
         void SetCacheDelay(long delay);
+
+        [OperationContract]
+        void SuscribeStationEvent(int station, string city);
     }
 }

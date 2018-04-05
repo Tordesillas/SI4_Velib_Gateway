@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solution5", "Solution5\Solution5.csproj", "{D23B10E2-D6E9-4869-AC18-5B1C11F2FCE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConsole", "AppConsole\AppConsole.csproj", "{20D123A9-876E-434A-9278-84E7F40FB855}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D23B10E2-D6E9-4869-AC18-5B1C11F2FCE7} = {D23B10E2-D6E9-4869-AC18-5B1C11F2FCE7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppForm", "AppForm\AppForm.csproj", "{170A43D0-4F3D-4E5B-87CF-CE89BE4B593C}"
 EndProject
